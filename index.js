@@ -4,6 +4,9 @@ const Engineer = require('./lib/Engineer');
 
 const inquirer = require('inquirer');
 const fs = require('fs');
+const generatePage = require('./src/page-generation');
+
+const teamMembers = [];
 
 function createManager(){
     console.log('Create your Manager');
@@ -35,6 +38,8 @@ function createManager(){
             answers.managerEmail,
             answers.managerOffice
         );
+        teamMembers.push(manager);
+        createTeam();
     })
 }
 
@@ -67,6 +72,8 @@ function createIntern(){
             answers.internEmail,
             answers.internSchool
         );
+        teamMembers.push(intern);
+        createTeam();
     })
 }
 
@@ -99,5 +106,40 @@ function createEngineer(){
             answers.engineerEmail,
             answers.engineerGithub
         );
+        teamMembers.push(engineer);
+        createTeam();
     })
 }
+
+function createTeam(){
+    inquirer.prompt([
+        {
+            type: 'list',
+            name: 'employeeChoice',
+            message: 'What type of employee would you like to make next?',
+            choices: [
+                'Engineer',
+                'Intern',
+                'Im done'
+            ]
+        }
+    ]).then((userInput) => {
+        switch(userInput.employeeChoice){
+            case 'Engineer':
+                createEngineer();
+                break;
+            case 'Intern':
+                createIntern();
+                break;
+            default: 
+                fs.writeFileSync("./dist/team.html", generatePage(teamMembers));
+        }
+    })
+}
+
+function startApp(){
+    console.log("Welcome to the team generator!");
+    createManager();
+}
+
+startApp();

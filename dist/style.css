@@ -1,0 +1,46 @@
+header{
+    background-color: lightcoral;
+    text-align: center;
+    padding: 50px;
+}
+
+ul{
+    padding: 0;
+    display: inline-block;
+    text-align: left;
+    justify-content: center;
+    list-style-type: none;
+    background-color: whitesmoke;
+    height: 50%;
+    width: 90%;
+    margin-left: 10px;
+}
+
+li{
+    padding: 5px;
+    border: 1px solid grey;
+}
+
+h2,
+h3{
+    margin: 15px;
+}
+
+.card{
+    position: relative;
+    margin: 10px;
+    max-width: 250px;
+    width: 90%;
+    min-height: 200px;
+    background-color: lightblue;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.team-area{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+}
