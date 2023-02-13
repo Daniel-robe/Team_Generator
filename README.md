@@ -12,6 +12,7 @@
   
   * [Contributing](#contributing)
   * [Tests](#tests)
+  * [Links](#links)
   * [Questions](#questions)
 
   ## Installation
@@ -35,6 +36,12 @@
   To test the repo run the following command(s):
 
   npm run test
+
+  ## Links
+  
+  Link to a walkthrough of the app
+  
+  https://drive.google.com/file/d/1yqktO4lgASiuzI9uwvuCTfUEN_wJebOl/view
 
   ## Questions 
 
